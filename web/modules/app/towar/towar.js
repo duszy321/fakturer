@@ -107,7 +107,7 @@ function getTowarDataForForm(id) {
 }
 
 function getJednostkiMiary() {
-    var url = HOST + '/api/towar/getJednostkiMiary';
+    var url = HOST + '/api/towar/getJednostkaMiary';
     var response = httpGet(url);
     return JSON.parse(response);
 }
