@@ -36,4 +36,7 @@ public class TowarRestController {
     public TowarDTO save(@RequestBody TowarDTO aTowarDTO) {
         return towarService.save(aTowarDTO);
     }
+
+    /*TODO dodać pobieranie enuma z backendu */
+    /*TODO Dodać datę utworzenia dla kontrahenta i towaru*/
 }
