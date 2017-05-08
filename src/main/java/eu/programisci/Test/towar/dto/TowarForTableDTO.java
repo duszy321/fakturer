@@ -43,7 +43,7 @@ public class TowarForTableDTO {
     }
 
     public void setJednostkaMiary(EJednostkaMiary jednostkaMiary) {
-        jednostkaMiary = jednostkaMiary;
+        this.jednostkaMiary = jednostkaMiary;
     }
 
     public Integer getVat() {

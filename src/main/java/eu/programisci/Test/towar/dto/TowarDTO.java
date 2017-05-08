@@ -14,10 +14,10 @@ public class TowarDTO {
     public TowarDTO() {
     }
 
-    public TowarDTO(String aNazwa, String aPkwiu, EJednostkaMiary aJednostkaMiary, Integer aVat, Double aCenaNetto) {
+    public TowarDTO(String aNazwa, String aPkwiu, EJednostkaMiary jednostka, Integer aVat, Double aCenaNetto) {
         nazwa = aNazwa;
         pkwiu = aPkwiu;
-        jednostkaMiary = aJednostkaMiary;
+        jednostkaMiary = jednostka;
         vat = aVat;
         cenaNetto = aCenaNetto;
     }
@@ -51,7 +51,7 @@ public class TowarDTO {
     }
 
     public void setJednostkaMiary(EJednostkaMiary jednostkaMiary) {
-        jednostkaMiary = jednostkaMiary;
+        this.jednostkaMiary = jednostkaMiary;
     }
 
     public Integer getVat() {

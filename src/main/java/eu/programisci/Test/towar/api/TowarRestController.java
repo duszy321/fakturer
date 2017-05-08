@@ -2,12 +2,15 @@ package eu.programisci.Test.towar.api;
 
 import eu.programisci.Test.towar.dto.TowarDTO;
 import eu.programisci.Test.towar.dto.TowarForTableDTO;
+import eu.programisci.Test.towar.ob.EJednostkaMiary;
 import eu.programisci.Test.towar.service.ITowarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping(value = "/api/towar")
@@ -32,11 +35,18 @@ public class TowarRestController {
         towarService.deleteOne(aId);
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(value = "/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public TowarDTO save(@RequestBody TowarDTO aTowarDTO) {
         return towarService.save(aTowarDTO);
     }
 
-    /*TODO dodać pobieranie enuma z backendu */
+    @RequestMapping(value = "/getJednostkaMiary", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public List<String> getJednostkaMiary() {
+        List<String> names = Stream.of(EJednostkaMiary.values())
+                .map(EJednostkaMiary::name)
+                .collect(Collectors.toList());
+        return names;
+    }
+
     /*TODO Dodać datę utworzenia dla kontrahenta i towaru*/
 }
