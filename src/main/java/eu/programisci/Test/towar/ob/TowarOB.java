@@ -3,6 +3,8 @@ package eu.programisci.Test.towar.ob;
 import javax.persistence.*;
 import eu.programisci.Test.towar.ob.EJednostkaMiary;
 
+import java.util.Date;
+
 @Entity
 @Table(name = "towary")
 @SequenceGenerator(allocationSize = 1, name = "SEKWENCJA", sequenceName = "gen_towary_id")
@@ -29,7 +31,9 @@ public class TowarOB {
     @Column(name = "cenaNetto")
     private Double cenaNetto;
 
-
+    @Column(name = "creation_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataUtworzenia;
 
     public Long getId() {
         return id;
@@ -75,6 +79,14 @@ public class TowarOB {
 
     public void setCenaNetto(Double aCenaNetto) {
         cenaNetto = aCenaNetto;
+    }
+
+    public Date getDataUtworzenia() {
+        return dataUtworzenia;
+    }
+
+    public void setDataUtworzenia(Date dataUtworzenia) {
+        this.dataUtworzenia = dataUtworzenia;
     }
 
 }

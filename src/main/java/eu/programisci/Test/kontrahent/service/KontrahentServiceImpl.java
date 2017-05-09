@@ -8,6 +8,7 @@ import eu.programisci.Test.kontrahent.repository.IKontrahentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -49,6 +50,7 @@ public class KontrahentServiceImpl implements IKontrahentService {
 
     private KontrahentOB create(KontrahentDTO dto) {
         KontrahentOB ob = kontrahentCoverter.dtoToOb(dto);
+        ob.setDataUtworzenia(new Date());
         ob = kontrahentRepository.save(ob);
         return ob;
     }

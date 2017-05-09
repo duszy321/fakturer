@@ -48,5 +48,5 @@ public class TowarRestController {
         return names;
     }
 
-    /*TODO Dodać datę utworzenia dla kontrahenta i towaru*/
+    /*TODO Dodać datę utworzenia(TIMESTAMP) dla kontrahenta i towaru*/
 }

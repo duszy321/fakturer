@@ -50,6 +50,7 @@ public class TowarServiceImpl implements ITowarService {
 
     private TowarOB create(TowarDTO dto) {
         TowarOB ob = towarCoverter.dtoToOb(dto);
+        ob.setDataUtworzenia(new Date());
         ob = towarRepository.save(ob);
         return ob;
     }

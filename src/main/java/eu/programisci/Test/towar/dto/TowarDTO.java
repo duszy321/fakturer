@@ -2,6 +2,8 @@ package eu.programisci.Test.towar.dto;
 
 import eu.programisci.Test.towar.ob.EJednostkaMiary;
 
+import java.security.Timestamp;
+
 public class TowarDTO {
 
     private Long id;
@@ -10,16 +12,18 @@ public class TowarDTO {
     private EJednostkaMiary jednostkaMiary; /*enum*/
     private Integer vat;
     private Double cenaNetto;
+    private Timestamp dataUtworzenia;
 
     public TowarDTO() {
     }
 
-    public TowarDTO(String aNazwa, String aPkwiu, EJednostkaMiary jednostka, Integer aVat, Double aCenaNetto) {
+    public TowarDTO(String aNazwa, String aPkwiu, EJednostkaMiary jednostka, Integer aVat, Double aCenaNetto, Timestamp aDataUtworzenia) {
         nazwa = aNazwa;
         pkwiu = aPkwiu;
         jednostkaMiary = jednostka;
         vat = aVat;
         cenaNetto = aCenaNetto;
+        dataUtworzenia = aDataUtworzenia;
     }
 
     public Long getId() {
@@ -68,6 +72,14 @@ public class TowarDTO {
 
     public void setCenaNetto(Double aCenaNetto) {
         cenaNetto = aCenaNetto;
+    }
+
+    public Timestamp getDataUtworzenia() {
+        return dataUtworzenia;
+    }
+
+    public void setDataUtworzenia(Timestamp dataUtworzenia) {
+        this.dataUtworzenia = dataUtworzenia;
     }
 
 }

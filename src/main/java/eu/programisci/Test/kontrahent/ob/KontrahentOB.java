@@ -1,6 +1,7 @@
 package eu.programisci.Test.kontrahent.ob;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "kontrahenci")
@@ -20,6 +21,10 @@ public class KontrahentOB {
 
     @Column(name = "nip")
     private String nip;
+
+    @Column(name = "creation_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataUtworzenia;
 
 
     public Long getId() {
@@ -53,5 +58,15 @@ public class KontrahentOB {
     public void setNip(String aNip) {
         nip = aNip;
     }
+
+    public Date getDataUtworzenia() {
+        return dataUtworzenia;
+    }
+
+    public void setDataUtworzenia(Date dataUtworzenia) {
+        this.dataUtworzenia = dataUtworzenia;
+    }
+
+
 
 }

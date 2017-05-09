@@ -47,5 +47,4 @@ public class KontrahentDTO {
     public void setNip(String aNip) {
         nip = aNip;
     }
-
 }
