@@ -47,6 +47,4 @@ public class TowarRestController {
                 .collect(Collectors.toList());
         return names;
     }
-
-    /*TODO Dodać datę utworzenia(TIMESTAMP) dla kontrahenta i towaru*/
 }
